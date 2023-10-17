@@ -4,8 +4,8 @@ import {options} from "@/app/api/auth/[...nextauth]/options"
 import Link from 'next/link'
 import prisma from "@/app/prismadb"
 import {AiTwotoneEdit} from "react-icons/ai"
-import Navbar from '../components/Navbar'
-import DeleteProduct from '../components/DeleteProduct'
+import Navbar from '@/components/Navbar'
+import DeleteProduct from '@/components/DeleteProduct'
 
 
 type Props = {}

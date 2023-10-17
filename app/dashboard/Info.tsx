@@ -7,10 +7,10 @@ import {SlTag} from "react-icons/sl"
 import {LiaShippingFastSolid} from "react-icons/lia"
 import {PiCubeFocusThin} from "react-icons/pi"
 import {AiTwotoneEdit} from "react-icons/ai"
-import Size from '../components/Size'
+import Size from '@/components/Size'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
-import AddCart from '../components/AddCart'
+import AddCart from '@/components/AddCart'
 
 interface Props{
     id:number

@@ -2,12 +2,12 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { signIn, signOut,useSession } from 'next-auth/react'
-import Navbar from '../components/Navbar'
+import Navbar from '@/components/Navbar'
 import { useRouter } from 'next/navigation'
-import Size from '../components/Size'
-import Color from '../components/Color'
-import Para from '../components/Para'
-import ImageUpload from '../components/ImageUpload'
+import Size from '@/components/Size'
+import Color from '@/components/Color'
+import Para from '@/components/Para'
+import ImageUpload from '@/components/ImageUpload'
 
 interface Props {
     id:number

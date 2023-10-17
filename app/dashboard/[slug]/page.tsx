@@ -2,7 +2,7 @@ import React from 'react'
 import prisma from "@/app/prismadb"
 import ImageGallery from '../ImageGallery'
 import Info from '../Info'
-import Review from '@/app/components/Review'
+import Review from '@/components/Review'
 import ReviewSection from '../ReviewSection'
 import { getServerSession } from "next-auth";
 import {options} from "@/app/api/auth/[...nextauth]/options"
