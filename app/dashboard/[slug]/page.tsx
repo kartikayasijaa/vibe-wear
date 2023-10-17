@@ -6,6 +6,7 @@ import Review from '@/app/components/Review'
 import ReviewSection from '../ReviewSection'
 import { getServerSession } from "next-auth";
 import {options} from "@/app/api/auth/[...nextauth]/options"
+import Link from 'next/link'
 
 
 type Props = {}
@@ -35,7 +36,7 @@ export default async function Page({params}:{params:{slug:string}}){
     return(
         <div className='max-w-[1280px] mx-auto px-5 py-5'>
             <div className='font-semibold text-2xl mb-2'>
-                <a href="/">SEINE</a>
+                <Link href="/">SEINE</Link>
             </div>
             <hr />
             {product && (

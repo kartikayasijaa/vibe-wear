@@ -25,7 +25,11 @@ export async function GET(request: Request) {
       },
     });
 
-    return NextResponse.json({ message: "API route is working" });
+    if(!products){
+      return NextResponse.json({err: "no products found"})
+    }
+
+    return NextResponse.json(products);
   } catch (error) {
     console.error("Error selecting product", error);
     return NextResponse.error();

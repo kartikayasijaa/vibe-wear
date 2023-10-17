@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 import Link from 'next/link'
 import Filter from './Filter'
+import { Product } from '@prisma/client'
 
 type Props = {}
 
@@ -17,7 +18,7 @@ const Page = (props: Props) => {
         max:10,
     })
     
-    const [response, setResponse] = useState<any[]>([])
+    const [response, setResponse] = useState<Product[]>()
 
     useEffect(() => {
         const fetchdata = async () => {
@@ -71,7 +72,7 @@ const Page = (props: Props) => {
             <div className='px-10'>
                 <h1 className='py-3 text-2xl font-medium'>Filtered Clothings</h1>
                 <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-5'>
-                    {response.map((product:any) => (
+                    {response && response.map((product) => (
                         <div key={product.id}>
                             <Link href={`/dashboard/${product.id}`}>
                                 <div className='relative rounded-lg'>

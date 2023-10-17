@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
                 <ul className='py-5 px-1 text-neutral-600'>
                     <li className='hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer'>{session.user.name}</li>
                     <li onClick={() => signOut()} className='whitespace-nowrap hover:text-red-600 px-5 py-2 cursor-pointer'>SignOut</li>
-                    <li className='whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer'><a href="/addproduct">Add Product</a></li>
+                    <li className='whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer'><Link href="/addproduct">Add Product</Link></li>
                 </ul>
             )
         }
@@ -35,7 +35,7 @@ const Navbar = (props: Props) => {
     <div>
         <div className='flex items-center justify-between py-4 relative'>
             <div className='flex items-center md:space-x-10 lg:space-x-20'>
-                <div className='font-semibold text-2xl'><a href="/">SEINE</a></div>
+                <div className='font-semibold text-2xl'><Link href="/">SEINE</Link></div>
                 <nav className='max-md:hidden'>
                     <ul className='flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]'>
                         <li><Link href="/" className='py-3 inline-block w-full'>Shop</Link></li>
