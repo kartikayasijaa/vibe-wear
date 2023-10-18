@@ -23,7 +23,7 @@ model User {
 }
 
 model Product {
-  id          Int         @id @default(autoincrement())
+  id          Int         @unique @id @default(autoincrement()) 
   title       String      @db.VarChar(255)
   description String      @db.Text
   category    String

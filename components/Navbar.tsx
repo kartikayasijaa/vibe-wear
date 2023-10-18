@@ -35,7 +35,7 @@ const Navbar = (props: Props) => {
     <div>
         <div className='flex items-center justify-between py-4 relative'>
             <div className='flex items-center md:space-x-10 lg:space-x-20'>
-                <div className='font-semibold text-2xl'><Link href="/">SEINE</Link></div>
+                <div className='font-semibold text-2xl'><Link href="/">Vibe Wear</Link></div>
                 <nav className='max-md:hidden'>
                     <ul className='flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]'>
                         <li><Link href="/" className='py-3 inline-block w-full'>Shop</Link></li>
@@ -50,7 +50,7 @@ const Navbar = (props: Props) => {
                 <SearchBar/>
                 <div onClick={() => setShowProfile(!showProfile)} className='relative cursor-pointer'>
                     <img src="user.jpg" className='w-[35px] h-[35px] rounded-full object-cover' alt="" />
-                    <div className={`absolute bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "":"hidden"}`}>
+                    <div className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "":"hidden"}`}>
                         <SignOut/>
                     </div>
                 </div>

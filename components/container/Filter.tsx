@@ -121,52 +121,34 @@ const Filter = (props: Props) => {
                 </div>
                 <div className='flex flex-col py-3 pb-5 tet-sm text-neutral-600 border-b-[0.5px]'>
                     <span
-                        className={`py-3 px-5 ${selectedCategories.includes('Blouses') ? "bg-purple-50":""}`}
-                        onClick={() => toggleCategory('Blouses')}
+                        className={`py-3 px-5 ${selectedCategories.includes('T-shirts') ? "bg-purple-50":""}`}
+                        onClick={() => toggleCategory('T-shirts')}
                     >
-                        Blouses
+                        T-shirt
                     </span>
                     <span
-                        className={`py-3 px-5 ${selectedCategories.includes('Shirt') ? "bg-purple-50":""}`}
-                        onClick={() => toggleCategory('Shirt')}
+                        className={`py-3 px-5 ${selectedCategories.includes('Shirts') ? "bg-purple-50":""}`}
+                        onClick={() => toggleCategory('Shirts')}
                     >
                         Shirt
                     </span>
                     <span 
-                    className={`py-3 px-5 ${selectedCategories.includes('Denim&Jeans') ? 'bg-purple-50' : ''}`}
-                    onClick={() => toggleCategory('Denim&Jeans')}
+                    className={`py-3 px-5 ${selectedCategories.includes('Jeans') ? 'bg-purple-50' : ''}`}
+                    onClick={() => toggleCategory('Jeans')}
                     >
                         Denim&Jeans
                     </span>
                     <span 
-                        className={`py-3 px-5 ${selectedCategories.includes('Party') ? 'bg-purple-50' : ''}`}
-                        onClick={() => toggleCategory('Party')}
+                        className={`py-3 px-5 ${selectedCategories.includes('Jackets') ? 'bg-purple-50' : ''}`}
+                        onClick={() => toggleCategory('Jackets')}
                     >
-                    Party
+                    Jackets
                     </span>
                     <span 
-                        className={`py-3 px-5 ${selectedCategories.includes('Pants') ? 'bg-purple-50' : ''}`}
-                        onClick={() => toggleCategory('Pants')}
+                        className={`py-3 px-5 ${selectedCategories.includes('Accessories') ? 'bg-purple-50' : ''}`}
+                        onClick={() => toggleCategory('Accessories')}
                     >
-                        Pants
-                    </span>
-                    <span 
-                        className={`py-3 px-5 ${selectedCategories.includes('Skirts') ? 'bg-purple-50' : ''}`}
-                        onClick={() => toggleCategory('Skirts')}
-                    >
-                        Skirts
-                    </span>
-                    <span 
-                        className={`py-3 px-5 ${selectedCategories.includes('Tops&tees') ? 'bg-purple-50' : ''}`}
-                        onClick={() => toggleCategory('Tops&tees')}
-                    >
-                        Tops&tees
-                    </span>
-                    <span 
-                        className={`py-3 px-5 ${selectedCategories.includes('Jackets&Coats') ? 'bg-purple-50' : ''}`}
-                        onClick={() => toggleCategory('Jackets&Coats')}
-                    >
-                        Jackets&Coats
+                        Accessories
                     </span>
                 </div>
                 <div className='border-b-[0.5px] pb-10'>

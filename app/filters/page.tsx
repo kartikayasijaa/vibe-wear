@@ -5,11 +5,12 @@ import axios from 'axios'
 import Link from 'next/link'
 import Filter from './Filter'
 import { Product } from '@prisma/client'
+import { Category } from '@/types/types'
 
 type Props = {}
 
 const Page = (props: Props) => {
-    const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+    const [selectedCategories, setSelectedCategories] = useState<Category[]>([])
     const [selectedSize, setSelectedSize] = useState<string[]>([])
     const [allHexValues, setAllHexValues] = useState<string[]>([])
     const [selectedHexValues, setSelectedHexValues] = useState<string[]>([])

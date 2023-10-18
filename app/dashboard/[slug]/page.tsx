@@ -36,7 +36,7 @@ export default async function Page({params}:{params:{slug:string}}){
     return(
         <div className='max-w-[1280px] mx-auto px-5 py-5'>
             <div className='font-semibold text-2xl mb-2'>
-                <Link href="/">SEINE</Link>
+                <Link href="/">Vibe Wear</Link>
             </div>
             <hr />
             {product && (
