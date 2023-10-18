@@ -49,7 +49,7 @@ const Navbar = (props: Props) => {
             <div className='flex items-center space-x-4'>
                 <SearchBar/>
                 <div onClick={() => setShowProfile(!showProfile)} className='relative cursor-pointer'>
-                    <img src="user.jpg" className='w-[35px] h-[35px] rounded-full object-cover' alt="" />
+                    <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" className='w-[35px] h-[35px] rounded-full object-cover' alt="" />
                     <div className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "":"hidden"}`}>
                         <SignOut/>
                     </div>

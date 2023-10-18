@@ -8,12 +8,13 @@ import Size from '@/components/Size'
 import Color from '@/components/Color'
 import Para from '@/components/Para'
 import ImageUpload from '@/components/ImageUpload'
+import { Category, categories } from '@/types/types'
 
 interface Props {
     id:number
     title:string
     description:string
-    category:string
+    category:Category | string
     style:string
     store:string
     size:string
@@ -52,7 +53,7 @@ const Edit = ({id,title,description,category,style,store,size, inventory,color,p
         }
     },[])
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const {name, value} = e.target
         setFormData({
             ...formData,
@@ -119,15 +120,25 @@ const Edit = ({id,title,description,category,style,store,size, inventory,color,p
                      />
                 </div>
                 <div>
-                    <label htmlFor="category" className='font-medium'>Category</label>
-                    <input 
-                        type="text"
-                        className='w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none'
-                        name='category'
-                        value={formData.category}
-                        onChange={handleChange}
-                        />
-                </div>
+            <label htmlFor="category" className="font-medium">
+              Category
+            </label>
+            <select
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                Select a category
+              </option>
+              {categories.map((c, idx) => (
+                <option key={idx} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </div>
                 <div>
                     <label htmlFor="style" className='font-medium'>Style</label>
                     <input 

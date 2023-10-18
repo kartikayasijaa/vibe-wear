@@ -5,12 +5,10 @@ export const dynamic = 'auto'
 
 export async function GET(request: Request) {
   try {
-    const searchParams = new URLSearchParams(request.credentials);
-
+    const searchParams = new URLSearchParams(request.url.split('?')[1]);
     const categories = searchParams.getAll("categories[]");
     const colors = searchParams.getAll("colors[]");
     const sizes = searchParams.getAll("size[]");
-
     const minPrice = parseInt(searchParams.get("price[min]") || "0");
     const maxPrice = parseInt(searchParams.get("price[max]") || "100000");
 
