@@ -1,30 +1,50 @@
 import prisma from "@/app/prismadb";
+import { FilterPayload } from "@/types/types";
 import { NextResponse } from "next/server";
 export const dynamic = "auto";
 // 'auto' | 'force-dynamic' | 'error' | 'force-static'
 
-export async function GET(request: Request) {
-  const searchParams = new URLSearchParams(request.url.split("?")[1]);
-  const categories = searchParams.getAll("categories[]");
-  const colors = searchParams.getAll("colors[]");
-  const sizes = searchParams.getAll("size[]");
-  const minPrice = parseInt(searchParams.get("price[min]") || "0");
-  const maxPrice = parseInt(searchParams.get("price[max]") || "100000");
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { categories, colors, size, price } = body as FilterPayload;
 
-  const products = await prisma.product.findMany({
-    where: {
-      AND: [
-        ...categories.map((category) => ({ style: { contains: category } })),
-        ...sizes.map((size) => ({ size: { contains: size } })),
-        ...colors.map((color) => ({ color: { contains: color } })),
-        { price: { gte: minPrice, lte: maxPrice } },
-      ],
-    },
-  });
+    const whereClause: {
+      category?: { in: string[] };
+      size?: { in: string[] };
+      color?: { in: string[] };
+    } = {};
 
-  if (!products) {
-    return NextResponse.json({ err: "no products found" });
+    // console.log(body)
+
+    console.log(categories)
+    if (categories && categories.length > 0) {
+      whereClause.category = { in: categories };
+    }
+
+    if (size && size.length > 0) {
+      whereClause.size = { in: size };
+    }
+
+    if (colors && colors.length > 0) {
+      whereClause.color = { in: colors };
+    }
+
+    console.log(whereClause)
+
+
+    const filteredProducts = await prisma.product.findMany({
+      where: whereClause,
+    });
+
+    if (!filteredProducts) {
+      return NextResponse.json({ err: "No products found" });
+    }
+
+    return NextResponse.json(filteredProducts);
+  } catch (error) {
+    console.error("Error processing request:", error);
+    return NextResponse.json({ err: "Internal server error" }, { status: 500 });
   }
-
-  return NextResponse.json(products);
 }
+

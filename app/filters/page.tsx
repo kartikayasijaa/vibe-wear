@@ -5,7 +5,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import Filter from './Filter'
 import { Product } from '@prisma/client'
-import { Category } from '@/types/types'
+import { Category, FilterPayload } from '@/types/types'
 
 type Props = {}
 
@@ -24,8 +24,8 @@ const Page = (props: Props) => {
     useEffect(() => {
         const fetchdata = async () => {
             try{
-                const response = await axios.get('/api/filterproduct',{
-                    params:{
+                const response = await axios.post('/api/filterproduct',{
+                    data:{
                         categories:selectedCategories,
                         size:selectedSize,
                         price:{
@@ -33,15 +33,13 @@ const Page = (props: Props) => {
                             max:price.max
                         },
                         colors: selectedHexValues
-                    },
+                    } as FilterPayload,
                     headers:{
                         'Content-Type':'application/json'
                     }
                 })
-                .then((response) => {
-                    console.log("response",response.data)
-                    setResponse(response.data)
-                })
+                console.log("response",response.data)
+                setResponse(response.data)
             }catch(error){
                 console.log('error', error)
             }

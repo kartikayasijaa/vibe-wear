@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import {BsSliders2Vertical, BsChevronUp} from "react-icons/bs"
 import axios from 'axios'
+import { FilterPayload } from '@/types/types'
 
 
 type Props = {}
@@ -90,8 +91,8 @@ const Filter = (props: Props) => {
     const allHexValue = allHexValues
     
     useEffect(() => {
-        axios.get('/api/filterproduct',{
-            params:{
+        axios.post('/api/filterproduct',{
+            body:{
                 categories:selectedCategories,
                 size:selectedSize,
                 price:{
@@ -99,7 +100,7 @@ const Filter = (props: Props) => {
                     max:price.max
                 },
                 colors: selectedHexValues
-            },
+            } as FilterPayload,
             headers:{
                 'Content-Type':'application/json'
             }
