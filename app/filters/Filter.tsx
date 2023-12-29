@@ -178,37 +178,37 @@ const Filter = (props: Props) => {
                     <ul className='grid grid-cols-4 px-5 gap-5'>
                         <li
                         className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${props.selectedSize.includes('SM') ? 'bg-neutral-900 text-white':''}`}
-                        onClick={() => togglesize('SM')}
+                        onClick={() => togglesize('sm')}
                         >
                             SM
                         </li>
                         <li
                         className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${props.selectedSize.includes('MD') ? 'bg-neutral-900 text-white':''}`}
-                        onClick={() => togglesize('MD')}
+                        onClick={() => togglesize('md')}
                         >
                             MD
                         </li>
                         <li
                         className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${props.selectedSize.includes('XL') ? 'bg-neutral-900 text-white':''}`}
-                        onClick={() => togglesize('XL')}
+                        onClick={() => togglesize('xl')}
                         >
                             XL
                         </li>
                         <li
                         className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${props.selectedSize.includes('2XL') ? 'bg-neutral-900 text-white':''}`}
-                        onClick={() => togglesize('2XL')}
+                        onClick={() => togglesize('2xl')}
                         >
                             2XL
                         </li>
                         <li
                         className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${props.selectedSize.includes('3XL') ? 'bg-neutral-900 text-white':''}`}
-                        onClick={() => togglesize('3XL')}
+                        onClick={() => togglesize('3xl')}
                         >
                             3XL
                         </li>
                         <li
                         className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${props.selectedSize.includes('4XL') ? 'bg-neutral-900 text-white':''}`}
-                        onClick={() => togglesize('2XL')}
+                        onClick={() => togglesize('4xl')}
                         >
                             4XL
                         </li>

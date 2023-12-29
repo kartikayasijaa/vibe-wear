@@ -6,18 +6,13 @@ export const dynamic = "auto";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { categories, colors, size, price } = body as FilterPayload;
-
+    const { data } = await request.json() as { data: FilterPayload };
+    const { categories, colors, size, price } = data;
     const whereClause: {
       category?: { in: string[] };
       size?: { in: string[] };
       color?: { in: string[] };
     } = {};
-
-    // console.log(body)
-
-    console.log(categories)
     if (categories && categories.length > 0) {
       whereClause.category = { in: categories };
     }
@@ -29,8 +24,6 @@ export async function POST(request: Request) {
     if (colors && colors.length > 0) {
       whereClause.color = { in: colors };
     }
-
-    console.log(whereClause)
 
 
     const filteredProducts = await prisma.product.findMany({
