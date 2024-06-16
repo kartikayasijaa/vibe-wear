@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^5.4.2",
+    "@prisma/client": "^5.15.0",
     "@tiptap/pm": "^2.1.11",
     "@tiptap/react": "^2.1.11",
     "@tiptap/starter-kit": "^2.1.11",
@@ -39,6 +39,6 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/react-color": "^3.0.6",
-    "prisma": "^5.4.2"
+    "prisma": "^5.15.0"
   }
 }
