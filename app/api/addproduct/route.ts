@@ -1,7 +1,7 @@
 import prisma from "@/app/prismadb"
 import { NextResponse } from "next/server"
 
-export async function POST(request: Request){
+export async function POST(request: Request) {
     const body = await request.json()
     const {
         title,
@@ -14,12 +14,12 @@ export async function POST(request: Request){
         price,
         images,
         userId,
-        store
+        store,
     } = body
 
-    try{
+    try {
         const product = await prisma.product.create({
-            data:{
+            data: {
                 title,
                 description,
                 category,
@@ -30,30 +30,29 @@ export async function POST(request: Request){
                 price,
                 images,
                 userId,
-                store
-            }
+                store,
+            },
         })
         return NextResponse.json(product)
-    }
-    catch(error){
-        console.log('Error creating the product', error)
+    } catch (error) {
+        console.log("Error creating the product", error)
         return NextResponse.error()
     }
 }
 
-export async function DELETE(req:Request){
+export async function DELETE(req: Request) {
     const body = await req.json()
-    const {productId, userId} = body
+    const { productId, userId } = body
 
-    try{
-        const deletedProduct=await prisma.product.delete({
-            where:{
-                id:productId,
-                userId:userId
-            }
+    try {
+        const deletedProduct = await prisma.product.delete({
+            where: {
+                id: productId,
+                userId: userId,
+            },
         })
         return NextResponse.json(deletedProduct)
-    }catch(error){
+    } catch (error) {
         console.error("Error deleting product", error)
         return NextResponse.error()
     }

@@ -1,56 +1,55 @@
 import prisma from "@/app/prismadb"
 import { NextResponse } from "next/server"
 
-export async function POST(request:Request){
+export async function POST(request: Request) {
     const body = await request.json()
-    const {productId, userId} = body
+    const { productId, userId } = body
 
-    try{
+    try {
         const existingCartItem = await prisma.cart.findFirst({
-            where:{
+            where: {
                 productId,
-                userId
-            }
+                userId,
+            },
         })
 
         console.log(existingCartItem)
-        if(existingCartItem){
+        if (existingCartItem) {
             await prisma.cart.delete({
-                where:{
-                    id:existingCartItem.id
-                }
+                where: {
+                    id: existingCartItem.id,
+                },
             })
         }
-        
+
         const product = await prisma.cart.create({
-            data:{
+            data: {
                 productId,
-                userId
-            }
+                userId,
+            },
         })
 
         return NextResponse.json(product)
-    }catch(error){
+    } catch (error) {
         console.log("Error adding product to cart", error)
         return NextResponse.error()
     }
 }
 
-export async function DELETE(request:Request){
+export async function DELETE(request: Request) {
     const body = await request.json()
-    const {productId, userId} = body
+    const { productId, userId } = body
 
-    try{
+    try {
         const deleteCart = await prisma.cart.deleteMany({
-            where:{
+            where: {
                 productId,
-                userId
-            }
+                userId,
+            },
         })
 
         return NextResponse.json(deleteCart)
-    }
-    catch(error){
+    } catch (error) {
         console.log("Error deleting product", error)
         return NextResponse.error()
     }
