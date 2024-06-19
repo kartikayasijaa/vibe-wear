@@ -7,7 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "format": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
@@ -39,6 +45,9 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/react-color": "^3.0.6",
+    "husky": "^9.0.11",
+    "prettier": "^3.3.2",
+    "pretty-quick": "^4.0.0",
     "prisma": "^5.15.0"
   }
 }
