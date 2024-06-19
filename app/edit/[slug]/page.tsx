@@ -1,34 +1,34 @@
-import React from 'react'
+import React from "react"
 import prisma from "@/app/prismadb"
-import Edit from '../Edit'
+import Edit from "../Edit"
 
 type Props = {}
 
-const EditProduct = async ({params}:{params:{slug:string}}) => {
-    const productId = parseInt(params.slug,10)
+const EditProduct = async ({ params }: { params: { slug: string } }) => {
+    const productId = parseInt(params.slug, 10)
 
-    if(isNaN(productId)){
+    if (isNaN(productId)) {
         return <div>Invalid product ID</div>
     }
 
-    try{
+    try {
         const product = await prisma.product.findUnique({
-            where:{
-                id:productId
-            }
+            where: {
+                id: productId,
+            },
         })
 
-        if(!product){
+        if (!product) {
             return <div>Product id not fount</div>
         }
 
-        return(
+        return (
             <div>
-                <Edit {...product}/>
+                <Edit {...product} />
             </div>
         )
-    }catch(error){
-        console.log("Error", error);
+    } catch (error) {
+        console.log("Error", error)
         return <div>Error fetching product</div>
     }
 }
