@@ -2,17 +2,16 @@ import prisma from "@/app/prismadb"
 import { NextResponse } from "next/server"
 
 export async function GET(request: Request) {
-    try{
+    try {
         const allColors = await prisma.product.findMany({
-            select:{
-                color:true
-            }
+            select: {
+                color: true,
+            },
         })
 
         return NextResponse.json(allColors)
-    }
-    catch(error){
-        console.log('Error fetching allcolors', error)
+    } catch (error) {
+        console.log("Error fetching allcolors", error)
         return NextResponse.error()
     }
 }

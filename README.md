@@ -5,6 +5,7 @@ Clone the project
 ```bash
   git clone https://github.com/kartikayasijaa/vibe-wear.git
 ```
+
 Install dependencies
 
 ```bash
@@ -27,10 +28,8 @@ Add .env file
   STRIPE_SECRET_KEY=
 ```
 
-
 Start the server
 
 ```bash
   yarn dev
 ```
-  
