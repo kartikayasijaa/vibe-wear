@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState } from "react"
 import Link from "next/link"
 import { CiShoppingCart } from "react-icons/ci"
@@ -7,13 +8,10 @@ import { BiSearch } from "react-icons/bi"
 import SearchBar from "./SearchBar"
 import { signIn, signOut, useSession } from "next-auth/react"
 
-type Props = {}
-
-const Navbar = (props: Props) => {
+const Navbar: React.FC = () => {
     const [showProfile, setShowProfile] = useState<boolean>(false)
     const [showNav, setShowNav] = useState<boolean>(false)
     const { data: session } = useSession()
-    // console.log(session?.user)
 
     const SignOut = () => {
         if (session && session.user) {
@@ -43,6 +41,7 @@ const Navbar = (props: Props) => {
             </ul>
         )
     }
+
     return (
         <div>
             <div className="flex items-center justify-between py-4 relative">
@@ -53,7 +52,7 @@ const Navbar = (props: Props) => {
                     <nav className="max-md:hidden">
                         <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
                             <li>
-                                <Link href="/" className="py-3 inline-block w-full">
+                                <Link href="/home" className="py-3 inline-block w-full">
                                     Home
                                 </Link>
                             </li>
@@ -63,13 +62,13 @@ const Navbar = (props: Props) => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="filters" className="py-3 inline-block w-full">
+                                <Link href="/filters" className="py-3 inline-block w-full">
                                     Filters
                                 </Link>
                             </li>
                             {session?.user && (
                                 <li>
-                                    <Link href="myproducts" className="py-3 inline-block w-full">
+                                    <Link href="/myproducts" className="py-3 inline-block w-full">
                                         My Products
                                     </Link>
                                 </li>
@@ -88,7 +87,9 @@ const Navbar = (props: Props) => {
                             alt=""
                         />
                         <div
-                            className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "" : "hidden"}`}>
+                            className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${
+                                showProfile ? "" : "hidden"
+                            }`}>
                             <SignOut />
                         </div>
                     </div>
@@ -109,7 +110,9 @@ const Navbar = (props: Props) => {
                         onClick={() => setShowNav(!showNav)}
                         className="p-[9px] bg-gray-100 rounded-full md:hidden">
                         <BsChevronCompactUp
-                            className={`transition ease-in duration-150 ${showNav ? "rotate-180" : "0"}`}
+                            className={`transition ease-in duration-150 ${
+                                showNav ? "rotate-180" : "0"
+                            }`}
                         />
                     </span>
                 </div>
