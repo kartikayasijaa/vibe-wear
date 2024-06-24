@@ -24,8 +24,7 @@ const Navbar = (props: Props) => {
                     </li>
                     <li
                         onClick={() => signOut()}
-                        className="whitespace-nowrap hover:text-red-600 px-5 py-2 cursor-pointer"
-                    >
+                        className="whitespace-nowrap hover:text-red-600 px-5 py-2 cursor-pointer">
                         SignOut
                     </li>
                     <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
@@ -38,8 +37,7 @@ const Navbar = (props: Props) => {
             <ul>
                 <li
                     onClick={() => signIn()}
-                    className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer"
-                >
+                    className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
                     SignIn
                 </li>
             </ul>
@@ -56,6 +54,11 @@ const Navbar = (props: Props) => {
                         <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
                             <li>
                                 <Link href="/" className="py-3 inline-block w-full">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/shop" className="py-3 inline-block w-full">
                                     Shop
                                 </Link>
                             </li>
@@ -78,16 +81,14 @@ const Navbar = (props: Props) => {
                     <SearchBar />
                     <div
                         onClick={() => setShowProfile(!showProfile)}
-                        className="relative cursor-pointer"
-                    >
+                        className="relative cursor-pointer">
                         <img
                             src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
                             className="w-[35px] h-[35px] rounded-full object-cover"
                             alt=""
                         />
                         <div
-                            className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "" : "hidden"}`}
-                        >
+                            className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "" : "hidden"}`}>
                             <SignOut />
                         </div>
                     </div>
@@ -106,8 +107,7 @@ const Navbar = (props: Props) => {
                     )}
                     <span
                         onClick={() => setShowNav(!showNav)}
-                        className="p-[9px] bg-gray-100 rounded-full md:hidden"
-                    >
+                        className="p-[9px] bg-gray-100 rounded-full md:hidden">
                         <BsChevronCompactUp
                             className={`transition ease-in duration-150 ${showNav ? "rotate-180" : "0"}`}
                         />
