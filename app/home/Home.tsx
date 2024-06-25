@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
                             way to express your unique personality and style.
                         </p>
                         <Link href="/shop">
-                            <div className="bg-slate-950 text-sm text-white w-28 text-center py-1 px-2 mt-4 rounded-xl">
+                            <div className="bg-slate-950 text-sm text-white w-28 text-center py-1 px-2 mt-4 rounded-xl ">
                                 Shop now
                             </div>
                         </Link>
@@ -32,9 +32,9 @@ const HomePage: React.FC = () => {
                         <Image
                             src={homeimg}
                             alt="home-img"
-                            className="object-cover"
-                            width={600}
-                            height={400}
+                            className="object-cover h-[500px]"
+                            // width={600}
+                            // height={200}
                         />
                     </div>
                 </div>

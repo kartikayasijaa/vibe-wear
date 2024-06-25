@@ -45,8 +45,8 @@ const Navbar: React.FC = () => {
 
     return (
         <div>
-            <div className="flex items-center justify-between p-4 relative">
-                <div className="flex items-center md:space-x-10 lg:space-x-20 shadow">
+            <div className="flex items-center justify-between p-4 relative shadow">
+                <div className="flex items-center md:space-x-10 lg:space-x-20 ">
                     <div className="cursive text-pink-700 font-extrabold text-2xl">
                         <Link href="/">Vibe Wear</Link>
                     </div>
