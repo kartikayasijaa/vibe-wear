@@ -3,6 +3,9 @@ import Navbar from "@/components/Navbar"
 import "./home.css"
 import Image from "next/image"
 import homeimg from "./images/design.jpg"
+import men from "./images/men.jpg"
+import women from "./images/women.jpg"
+
 import Link from "next/link"
 
 const HomePage: React.FC = () => {
@@ -33,7 +36,7 @@ const HomePage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="about h-full bg-pink-700 p-5 ">
+            <div className="about bg-pink-700 p-5 ">
                 <h1 className="cursive text-white font-extrabold text-center text-2xl sm:text-lg md:text-2xl mt-5">
                     What We Offer:
                 </h1>
@@ -75,7 +78,47 @@ const HomePage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="category"></div>
+            {/* <div className="category">
+                <h1 className=" p-5 font-extrabold text-center text-2xl sm:text-lg md:text-2xl mt-5">
+                    Shop by <span className="cursive text-pink-700"> category</span>
+                </h1>
+                <Image src={women} alt="women-section" />
+                <Image src={men} alt="men-section" />
+            </div> */}
+
+            <div className="category mt-10 pb-10">
+                <h1 className="p-5 font-extrabold text-center text-2xl sm:text-lg md:text-2xl mt-5">
+                    Shop by <span className="cursive text-pink-700"> category</span>
+                </h1>
+                <div className="flex flex-col lg:flex-row gap-4 h-[500px]">
+                    <div className="relative w-full lg:w-1/2 h-full">
+                        <Image
+                            src={women}
+                            alt="women-section"
+                            className="object-cover w-full h-full"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <Link
+                                href="/women"
+                                className="text-white text-3xl font-bold py-2 px-4 bg-transparent border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
+                                Women
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="relative w-full lg:w-1/2 h-full">
+                        <Image src={men} alt="men-section" className="object-cover w-full h-full" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <Link
+                                href="/men"
+                                className="text-white text-3xl font-bold py-2 px-4 bg-transparent border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
+                                Men
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="footer"></div>
         </div>
     )
 }

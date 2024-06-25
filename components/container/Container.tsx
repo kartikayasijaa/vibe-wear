@@ -2,6 +2,7 @@ import Link from "next/link"
 import React from "react"
 import Filter from "./Filter"
 import Item from "./Item"
+import Footer from "./Footer"
 
 type Props = {}
 
@@ -17,6 +18,10 @@ const Container = (props: Props) => {
                 <div className="px-20">
                     <Item />
                 </div>
+            </div>
+            <div className="mt-5">
+                {" "}
+                <Footer />
             </div>
         </div>
     )
