@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import { useRouter } from "next/router"
 import Link from "next/link"
 import { CiShoppingCart } from "react-icons/ci"
 import { BsChevronCompactUp } from "react-icons/bs"
@@ -13,6 +14,13 @@ const Navbar: React.FC = () => {
     const [showProfile, setShowProfile] = useState<boolean>(false)
     const [showNav, setShowNav] = useState<boolean>(false)
     const { data: session } = useSession()
+
+    // const router = useRouter()
+
+    const handleSearch = (query: string) => {
+        console.log("Search query:", query)
+        // router.push(`/search?query=${query}`)
+    }
 
     const SignOut = () => {
         if (session && session.user) {
@@ -78,7 +86,7 @@ const Navbar: React.FC = () => {
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <SearchBar />
+                    <SearchBar onSearch={handleSearch} />
                     <div
                         onClick={() => setShowProfile(!showProfile)}
                         className="relative cursor-pointer">

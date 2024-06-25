@@ -29,13 +29,7 @@ const HomePage: React.FC = () => {
                         </Link>
                     </div>
                     <div className="right-content w-full md:w-1/2 p-2 flex justify-center items-center">
-                        <Image
-                            src={homeimg}
-                            alt="home-img"
-                            className="object-cover h-[500px]"
-                            // width={600}
-                            // height={200}
-                        />
+                        <Image src={homeimg} alt="home-img" className="object-cover h-[500px]" />
                     </div>
                 </div>
 
