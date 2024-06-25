@@ -120,6 +120,11 @@ const Navbar: React.FC = () => {
             <div className={`md:hidden ${showNav ? "pb-4 px-5" : "h-0 invisible opacity-0"}`}>
                 <ul className="flex flex-col text-[15px] opacity-75 px-2">
                     <li>
+                        <Link href="/home" className="py-3 inline-block w-full ">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/shop" className="py-3 inline-block w-full ">
                             Shop
                         </Link>
