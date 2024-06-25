@@ -7,6 +7,7 @@ import { BsChevronCompactUp } from "react-icons/bs"
 import { BiSearch } from "react-icons/bi"
 import SearchBar from "./SearchBar"
 import { signIn, signOut, useSession } from "next-auth/react"
+import "../app/home/home.css"
 
 const Navbar: React.FC = () => {
     const [showProfile, setShowProfile] = useState<boolean>(false)
@@ -44,9 +45,9 @@ const Navbar: React.FC = () => {
 
     return (
         <div>
-            <div className="flex items-center justify-between py-4 relative">
-                <div className="flex items-center md:space-x-10 lg:space-x-20">
-                    <div className="font-semibold text-2xl">
+            <div className="flex items-center justify-between p-4 relative">
+                <div className="flex items-center md:space-x-10 lg:space-x-20 shadow">
+                    <div className="cursive text-pink-700 font-extrabold text-2xl">
                         <Link href="/">Vibe Wear</Link>
                     </div>
                     <nav className="max-md:hidden">

@@ -6,3 +6,17 @@
 
     font-style: normal;
 }
+
+.line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333; /* Adjust color as needed */
+    transition: width 0.3s ease-out;
+}
+
+.h3:hover .line {
+    width: 100%;
+}
