@@ -13,7 +13,6 @@ const SignForm = (props: Props) => {
     password: ""
   })
 
-  //const router = useRouter()
 
   const Register = () => {
     const data = {
@@ -37,10 +36,7 @@ const SignForm = (props: Props) => {
       .catch((error) => {
         console.log(error)
       })
-      //.finally(() => {
-      //  //router.push('/signin')
-      //
-      //})
+      
   }
   return (
     <div className='flex flex-col items-center justify-center min-h-screen py-2'>
