@@ -1,14 +1,13 @@
 "use client"
 
-import React, { useState } from "react"
-import { useRouter } from "next/router"
-import Link from "next/link"
-import { CiShoppingCart } from "react-icons/ci"
-import { BsChevronCompactUp } from "react-icons/bs"
-import { BiSearch } from "react-icons/bi"
-import SearchBar from "./SearchBar"
+import "@/components/home/home.css"
 import { signIn, signOut, useSession } from "next-auth/react"
-import "../app/home/home.css"
+import Link from "next/link"
+import React, { useState } from "react"
+import { BiSearch } from "react-icons/bi"
+import { BsChevronCompactUp } from "react-icons/bs"
+import { CiShoppingCart } from "react-icons/ci"
+import SearchBar from "./SearchBar"
 
 const Navbar: React.FC = () => {
     const [showProfile, setShowProfile] = useState<boolean>(false)
@@ -63,11 +62,6 @@ const Navbar: React.FC = () => {
                             <li>
                                 <Link href="/home" className="py-3 inline-block w-full">
                                     Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/shop" className="py-3 inline-block w-full">
-                                    Shop
                                 </Link>
                             </li>
                             <li>
@@ -131,11 +125,6 @@ const Navbar: React.FC = () => {
                     <li>
                         <Link href="/home" className="py-3 inline-block w-full ">
                             Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/shop" className="py-3 inline-block w-full ">
-                            Shop
                         </Link>
                     </li>
                     <li>

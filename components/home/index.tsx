@@ -11,7 +11,6 @@ import "./home.css"
 const HomePage: React.FC = () => {
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <div className="flex-grow px-5 max-w-[1280px] mx-auto overflow-y-auto">
                 <div className="flex h-full">
                     <div className="left-content w-full md:w-1/2 p-2 flex flex-col justify-center items-center">
@@ -22,7 +21,7 @@ const HomePage: React.FC = () => {
                             At Vibe Wear, we believe that fashion is more than just clothing; it's a
                             way to express your unique personality and style.
                         </p>
-                        <Link href="/shop">
+                        <Link href="/filters">
                             <div className="bg-slate-950 text-sm text-white w-28 text-center py-1 px-2 mt-4 rounded-xl ">
                                 Shop now
                             </div>

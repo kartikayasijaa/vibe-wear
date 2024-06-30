@@ -8,7 +8,6 @@ export default async function Home() {
     // console.log(user)
     return (
         <div className="max-w-[1280px] mx-auto">
-            <Navbar />
             <hr />
             <Container />
         </div>

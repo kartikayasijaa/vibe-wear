@@ -49,9 +49,6 @@ const Page = (props: Props) => {
 
     return (
         <div className="px-5 max-w-[1280px] mx-auto">
-            <div>
-                <Navbar />
-            </div>
             <hr />
             <div className="flex">
                 <div>

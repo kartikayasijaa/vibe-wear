@@ -27,7 +27,6 @@ const page = async (props: Props) => {
     }
     return (
         <div className="max-w-[1280px] mx-auto">
-            <Navbar />
             <div>
                 {allmyproduct.map((product) => (
                     <div
