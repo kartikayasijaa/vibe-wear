@@ -1,19 +1,25 @@
 "use client"
-import React, { useState } from "react"
-import Link from "next/link"
-import { CiShoppingCart } from "react-icons/ci"
-import { BsChevronCompactUp } from "react-icons/bs"
-import { BiSearch } from "react-icons/bi"
-import SearchBar from "./SearchBar"
+
+import "@/components/home/home.css"
 import { signIn, signOut, useSession } from "next-auth/react"
+import Link from "next/link"
+import React, { useState } from "react"
+import { BiSearch } from "react-icons/bi"
+import { BsChevronCompactUp } from "react-icons/bs"
+import { CiShoppingCart } from "react-icons/ci"
+import SearchBar from "./SearchBar"
 
-type Props = {}
-
-const Navbar = (props: Props) => {
+const Navbar: React.FC = () => {
     const [showProfile, setShowProfile] = useState<boolean>(false)
     const [showNav, setShowNav] = useState<boolean>(false)
     const { data: session } = useSession()
-    // console.log(session?.user)
+
+    // const router = useRouter()
+
+    const handleSearch = (query: string) => {
+        console.log("Search query:", query)
+        // router.push(`/search?query=${query}`)
+    }
 
     const SignOut = () => {
         if (session && session.user) {
@@ -24,8 +30,7 @@ const Navbar = (props: Props) => {
                     </li>
                     <li
                         onClick={() => signOut()}
-                        className="whitespace-nowrap hover:text-red-600 px-5 py-2 cursor-pointer"
-                    >
+                        className="whitespace-nowrap hover:text-red-600 px-5 py-2 cursor-pointer">
                         SignOut
                     </li>
                     <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
@@ -38,35 +43,35 @@ const Navbar = (props: Props) => {
             <ul>
                 <li
                     onClick={() => signIn()}
-                    className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer"
-                >
+                    className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
                     SignIn
                 </li>
             </ul>
         )
     }
+
     return (
         <div>
-            <div className="flex items-center justify-between py-4 relative">
-                <div className="flex items-center md:space-x-10 lg:space-x-20">
-                    <div className="font-semibold text-2xl">
+            <div className="flex items-center justify-between p-4 relative shadow">
+                <div className="flex items-center md:space-x-10 lg:space-x-20 ">
+                    <div className="cursive text-pink-700 font-extrabold text-2xl">
                         <Link href="/">Vibe Wear</Link>
                     </div>
                     <nav className="max-md:hidden">
                         <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
                             <li>
-                                <Link href="/" className="py-3 inline-block w-full">
-                                    Shop
+                                <Link href="/home" className="py-3 inline-block w-full">
+                                    Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href="filters" className="py-3 inline-block w-full">
+                                <Link href="/filters" className="py-3 inline-block w-full">
                                     Filters
                                 </Link>
                             </li>
                             {session?.user && (
                                 <li>
-                                    <Link href="myproducts" className="py-3 inline-block w-full">
+                                    <Link href="/myproducts" className="py-3 inline-block w-full">
                                         My Products
                                     </Link>
                                 </li>
@@ -75,19 +80,19 @@ const Navbar = (props: Props) => {
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <SearchBar />
+                    <SearchBar onSearch={handleSearch} />
                     <div
                         onClick={() => setShowProfile(!showProfile)}
-                        className="relative cursor-pointer"
-                    >
+                        className="relative cursor-pointer">
                         <img
                             src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
                             className="w-[35px] h-[35px] rounded-full object-cover"
                             alt=""
                         />
                         <div
-                            className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${showProfile ? "" : "hidden"}`}
-                        >
+                            className={`absolute right-0 bg-white z-[2] rounded-lg shadow-lg ${
+                                showProfile ? "" : "hidden"
+                            }`}>
                             <SignOut />
                         </div>
                     </div>
@@ -106,10 +111,11 @@ const Navbar = (props: Props) => {
                     )}
                     <span
                         onClick={() => setShowNav(!showNav)}
-                        className="p-[9px] bg-gray-100 rounded-full md:hidden"
-                    >
+                        className="p-[9px] bg-gray-100 rounded-full md:hidden">
                         <BsChevronCompactUp
-                            className={`transition ease-in duration-150 ${showNav ? "rotate-180" : "0"}`}
+                            className={`transition ease-in duration-150 ${
+                                showNav ? "rotate-180" : "0"
+                            }`}
                         />
                     </span>
                 </div>
@@ -117,8 +123,8 @@ const Navbar = (props: Props) => {
             <div className={`md:hidden ${showNav ? "pb-4 px-5" : "h-0 invisible opacity-0"}`}>
                 <ul className="flex flex-col text-[15px] opacity-75 px-2">
                     <li>
-                        <Link href="/shop" className="py-3 inline-block w-full ">
-                            Shop
+                        <Link href="/home" className="py-3 inline-block w-full ">
+                            Home
                         </Link>
                     </li>
                     <li>

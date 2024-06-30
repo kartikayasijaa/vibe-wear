@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+ZA:wght@100..400&display=swap");
+
+.cursive {
+    font-family: "Playwrite ZA", cursive;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333; /* Adjust color as needed */
+    transition: width 0.3s ease-out;
+}
+
+.h3:hover .line {
+    width: 100%;
+}

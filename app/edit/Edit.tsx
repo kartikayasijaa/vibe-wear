@@ -118,9 +118,6 @@ const Edit = ({
 
     return (
         <div className="px-5 max-w-[1280px] mx-auto mb-10">
-            <div>
-                <Navbar />
-            </div>
             <h1 className="text-3xl font-semibold py-6">Add your Product</h1>
             <div className="text-black mt-4">
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
