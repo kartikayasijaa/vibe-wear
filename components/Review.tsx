@@ -44,10 +44,11 @@ const Review = ({ productId, userId }: Props) => {
             <h2 className="mb-2">Give Rating</h2>
             <ReactStars
                 onChange={onChange}
-                value={defaultReviwForm.star}
+                value={reviewForm.star}
                 size={17}
                 isEdit={true}
                 activeColors={["red", "orange", "#FFCE00", "#9177FF", "#8568FC"]}
+                key={reviewForm.star}
             />
             <h2 className="mt-4">Write you comment here;</h2>
             <div>
